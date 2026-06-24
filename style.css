@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturCook:wght@700&family=IM+Fell+English+SC&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #d4c8c8;
+  font-family: 'IM Fell English SC', serif;
+  line-height: 1.9;
+}
+
+header {
+  height: 100vh;
+  background: linear-gradient(rgba(10,0,0,0.85), rgba(10,0,0,0.95)), url('https://i.imgur.com/5z3fK8J.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.curtain {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 160px;
+  background: linear-gradient(#3a0000, #1a0000);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.95);
+}
+
+h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 6.5rem;
+  color: #ff2244;
+  text-shadow: 0 0 40px #ff2244, 0 0 80px #880000;
+  letter-spacing: 15px;
+}
+
+.subtitle {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2.5rem;
+  color: #aa6688;
+  margin-top: -30px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+section {
+  margin-bottom: 100px;
+  padding: 40px;
+  background: rgba(20, 0, 20, 0.85);
+  border-left: 8px solid #ff2244;
+  box-shadow: 0 10px 30px rgba(255, 34, 68, 0.2);
+}
+
+h2 {
+  font-family: 'Creepster', cursive;
+  font-size: 3rem;
+  color: #ff4466;
+  margin-bottom: 25px;
+}
+
+.puppet-float {
+  display: block;
+  margin: 40px auto;
+  width: 300px;
+  filter: drop-shadow(0 0 60px #ff2244);
+  animation: sway 10s infinite alternate ease-in-out;
+}
+
+@keyframes sway {
+  from { transform: rotate(-10deg) translateY(0); }
+  to { transform: rotate(10deg) translateY(-50px); }
+}
+
+.music-box {
+  text-align: center;
+  padding: 50px;
+  background: #1f001f;
+  border: 5px double #660022;
+  margin: 60px 0;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.music-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px #ff2244;
+}
+
+.quotes p {
+  font-style: italic;
+  margin: 15px 0;
+  color: #ff99aa;
+}
