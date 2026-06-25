@@ -19,14 +19,12 @@
 </head>
 <body>
 
-
-
-  <!-- 
+  <!-- ═══════════════════════════════════════════════
        NAVIGATION FIXE
        Reste en haut de page pendant le scroll.
        La classe .scrolled est ajoutée via JS pour
        afficher une ombre quand on défile.
-  -->
+  ═══════════════════════════════════════════════ -->
   <nav id="nav-principal">
     <ul>
       <li><a href="#intro">Intro</a></li>
@@ -39,36 +37,40 @@
   </nav>
 
 
-
-
-  <!-- 
+  <!-- ═══════════════════════════════════════════════
        HERO — Section d'accroche pleine hauteur
        Contient :
-        -- l'image
-         - Le titre animé
-         - Le séparateur rouge
-         - Les larmes animées (motif visuel signature)
-         - La flèche de scroll
--->
+         • L'image de Puppet
+         • Le titre animé
+         • Le séparateur rouge
+         • Les larmes animées (motif visuel signature)
+         • La flèche de scroll
+  ═══════════════════════════════════════════════ -->
   <section id="hero">
     <div class="hero-contenu">
 
-    
       <!-- Image de Puppet — place ton fichier image dans le même dossier
            que index.html et remplace "puppet.png" par son nom exact. -->
-      <div class="Puppet-img-wrapper">
-
+      <div class="puppet-img-wrapper">
 
         <!-- Halo lumineux derrière le personnage -->
         <div class="halo" aria-hidden="true"></div>
-        <img src="Puppet.png" alt="Illustration de Puppet">
-      </div>                                            
-     
-      <h1>Puppet</h1>                                                                  <!-- Titre principal avec animation d'entrée CSS -->
-      <div class="separateur" aria-hidden="true"></div>                                <!-- Ligne de séparation animée (s'étend à l'apparition) -->
-      <p class="sous-titre">Five Nights at Freddy's — Présentation du personnage</p>   <!-- Sous-titre italique -->
 
-      <!-- Trois larmes verticales animées en CSS -->
+        <img src="img/Puppet.png" alt="Illustration de Puppet">
+
+      </div><!-- /.puppet-img-wrapper -->
+
+      <!-- Titre principal avec animation d'entrée CSS -->
+      <h1>Puppet</h1>
+
+      <!-- Ligne de séparation animée (s'étend à l'apparition) -->
+      <div class="separateur" aria-hidden="true"></div>
+
+      <!-- Sous-titre italique -->
+      <p class="sous-titre">Five Nights at Freddy's — Présentation du personnage</p>
+
+      <!-- Trois larmes verticales animées en CSS pur
+           Décalage progressif via nth-child -->
       <div class="larmes" aria-hidden="true">
         <div class="larme"></div>
         <div class="larme"></div>
@@ -86,16 +88,14 @@
   </section><!-- /#hero -->
 
 
-
-
-  <!-- 
+  <!-- ═══════════════════════════════════════════════
        SECTIONS DE CONTENU
        Chaque section utilise .reveal pour l'animation
        d'apparition au scroll (gérée par le JS avec
        IntersectionObserver).
        .reveal-delay-N permet de décaler les animations
        entre blocs voisins.
-  -->
+  ═══════════════════════════════════════════════ -->
 
   <!-- Section : Introduction générale -->
   <section id="intro">
@@ -117,8 +117,6 @@
     </div>
   </section>
 
-
-
   <!-- Section : Histoire et origines -->
   <section id="histoire">
     <div class="section-wrapper reveal reveal-delay-1">
@@ -138,9 +136,6 @@
       </p>
     </div>
   </section>
-
-
-
 
   <!-- Section : Rôle dans FNAF 2 -->
   <section id="fnaf2">
@@ -162,8 +157,6 @@
     </div>
   </section>
 
-
-
   <!-- Section : Apparition dans FNAF 3 -->
   <section id="fnaf3">
     <div class="section-wrapper reveal">
@@ -182,9 +175,6 @@
       </p>
     </div>
   </section>
-
-
-
 
   <!-- Section : FNAF 6 / Pizzeria Simulator -->
   <section id="fnaf6">
@@ -205,9 +195,6 @@
     </div>
   </section>
 
-
-
-
   <!-- Section : Conclusion -->
   <section id="conclusion">
     <div class="section-wrapper reveal">
@@ -226,19 +213,17 @@
     </div>
   </section>
 
-=
 
-
-
-
-<!-- 
+  <!-- ═══════════════════════════════════════════════
        PIED DE PAGE
-  -->
-<footer>
-    <span class="footer-symbol">∞</span>
-    <p> Five Nights at Freddy's  — Site consacré à Puppet</p>
-    <a href="https://salutoi3008.github.io/Trombinoscope-Anime-Manga/">Retour au Trombinoscope</a>
+  ═══════════════════════════════════════════════ -->
+  <footer>
+    <p>Five Nights at Freddy's — Scott Cawthon</p>
   </footer>
+
+
+  <!-- Script JavaScript externe, chargé en fin de body
+       pour garantir que le DOM est entièrement construit -->
   <script src="script.js"></script>
 
 </body>

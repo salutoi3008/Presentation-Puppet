@@ -316,25 +316,27 @@ nav a.active::after {
 
 
 /* ──────────────────────────────────────────────────────────
-   8. ILLUSTRATION SVG — PUPPET
-   Le wrapper gère l'halo et la lévitation du personnage.
+   8. IMAGE PUPPET
+   Le wrapper gère le halo et la lévitation du personnage.
+   Taille portrait pour coller aux proportions de l'image.
 ────────────────────────────────────────────────────────── */
 .puppet-img-wrapper {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 320px;
   margin: 0 auto 2rem;
 }
 
-/* L'image flotte de bas en haut en boucle
-   Utilise object-fit: contain pour respecter les proportions */
+/* drop-shadow suit les contours transparents du PNG
+   (contrairement à box-shadow qui ferait un rectangle) */
 .puppet-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   filter:
-    drop-shadow(0 0 20px rgba(139, 0, 0, 0.6))
-    drop-shadow(0 0 50px rgba(107, 15, 138, 0.3));
+    drop-shadow(0 0 18px rgba(139, 0, 0, 0.7))
+    drop-shadow(0 0 45px rgba(107, 15, 138, 0.4))
+    drop-shadow(0 0 80px rgba(139, 0, 0, 0.2));
   animation: puppetFlotte 4s ease-in-out infinite;
 }
 
