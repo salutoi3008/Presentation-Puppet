@@ -2,149 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <!-- Permet au site d'être correctement affiché sur mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puppet — Five Nights at Freddy's</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-  <style>
-    /* ── VARIABLES ─────────────────────────────── */
-    :root {
-      --noir:       #0a0a0f;
-      --noir-doux:  #12111a;
-      --violet:     #2a0a3a;
-      --rouge:      #8b0000;
-      --rouge-vif:  #c0392b;
-      --blanc:      #e8e0f0;
-      --gris:       #9b8fb0;
-      --accent:     #6b0f8a;
-    }
+  <!-- Polices Google Fonts :
+       - Cinzel    → titres et navigation (style romain, solennel)
+       - Crimson Text → corps du texte (lisibilité & élégance) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
 
-    /* ── RESET & BASE ──────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--noir);
-      color: var(--blanc);
-      font-family: 'Crimson Text', Georgia, serif;
-      font-size: 1.15rem;
-      line-height: 1.8;
-    }
-
-    /* ── NAVIGATION ────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(10, 10, 15, 0.92);
-      border-bottom: 1px solid var(--rouge);
-      backdrop-filter: blur(6px);
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      list-style: none;
-      padding: 1rem 2rem;
-    }
-
-    nav a {
-      font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gris);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--rouge-vif);
-    }
-
-    /* ── HERO ──────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 6rem 2rem 4rem;
-      background:
-        radial-gradient(ellipse at 50% 60%, rgba(107,15,138,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse at 50% 80%, rgba(139,0,0,0.12) 0%, transparent 60%),
-        var(--noir);
-    }
-
-    #hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(3.5rem, 10vw, 7rem);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--blanc);
-      text-shadow: 0 0 60px rgba(139,0,0,0.5), 0 0 120px rgba(107,15,138,0.3);
-      margin-bottom: 1rem;
-    }
-
-    #hero .sous-titre {
-      font-family: 'Crimson Text', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--gris);
-      letter-spacing: 0.05em;
-    }
-
-    .separateur {
-      width: 80px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--rouge), transparent);
-      margin: 2rem auto;
-    }
-
-    /* ── SECTIONS ──────────────────────────────── */
-    section {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-      border-bottom: 1px solid rgba(139,0,0,0.15);
-    }
-
-    section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.1em;
-      color: var(--rouge-vif);
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-    }
-
-    section p {
-      color: var(--blanc);
-      margin-bottom: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* ── FOOTER ────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: var(--rouge);
-      opacity: 0.5;
-    }
-  </style>
+  <!-- Feuille de style externe -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
+
+
+  <!-- 
+       NAVIGATION FIXE
+       Reste en haut de page pendant le scroll.
+       La classe .scrolled est ajoutée via JS pour
+       afficher une ombre quand on défile.
+  -->
+  <nav id="nav-principal">
     <ul>
       <li><a href="#intro">Intro</a></li>
       <li><a href="#histoire">Histoire</a></li>
@@ -155,50 +38,208 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+
+
+
+  <!-- 
+       HERO — Section d'accroche pleine hauteur
+       Contient :
+        -- l'image
+         - Le titre animé
+         - Le séparateur rouge
+         - Les larmes animées (motif visuel signature)
+         - La flèche de scroll
+-->
   <section id="hero">
-    <h1>Puppet</h1>
-    <div class="separateur"></div>
-    <p class="sous-titre">Five Nights at Freddy's — Présentation du personnage</p>
-  </section>
+    <div class="hero-contenu">
 
-  <!-- INTRO -->
+    
+      <!-- Image de Puppet — place ton fichier image dans le même dossier
+           que index.html et remplace "puppet.png" par son nom exact. -->
+      <div class="Puppet-img-wrapper">
+
+
+        <!-- Halo lumineux derrière le personnage -->
+        <div class="halo" aria-hidden="true"></div>
+        <img src="Puppet.png" alt="Illustration de Puppet">
+      </div>                                            
+     
+      <h1>Puppet</h1>                                                                  <!-- Titre principal avec animation d'entrée CSS -->
+      <div class="separateur" aria-hidden="true"></div>                                <!-- Ligne de séparation animée (s'étend à l'apparition) -->
+      <p class="sous-titre">Five Nights at Freddy's — Présentation du personnage</p>   <!-- Sous-titre italique -->
+
+      <!-- Trois larmes verticales animées en CSS -->
+      <div class="larmes" aria-hidden="true">
+        <div class="larme"></div>
+        <div class="larme"></div>
+        <div class="larme"></div>
+      </div>
+
+    </div><!-- /.hero-contenu -->
+
+    <!-- Indicateur visuel invitant l'utilisateur à défiler -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Découvrir</span>
+      <div class="fleche"></div>
+    </div>
+
+  </section><!-- /#hero -->
+
+
+
+
+  <!-- 
+       SECTIONS DE CONTENU
+       Chaque section utilise .reveal pour l'animation
+       d'apparition au scroll (gérée par le JS avec
+       IntersectionObserver).
+       .reveal-delay-N permet de décaler les animations
+       entre blocs voisins.
+  -->
+
+  <!-- Section : Introduction générale -->
   <section id="intro">
-    <h2>Introduction</h2>
-    <p>Le contenu de l'intro ira ici.</p>
+    <div class="section-wrapper reveal">
+      <span class="badge-jeu">Présentation</span>
+      <h2>Introduction</h2>
+      <div class="h2-ligne" aria-hidden="true"></div>
+      <p>
+        Le Puppet (également appelé <em>The Marionette</em>) est l'un des animatroniques les plus
+        mystérieux et emblématiques de la franchise Five Nights at Freddy's. Contrairement aux
+        autres créatures de la pizzeria, il ne se contente pas d'errer dans les couloirs — il
+        observe, il ressent, et il agit avec intention.
+      </p>
+      <p>
+        Son apparence est immédiatement reconnaissable : un visage blanc maquillé de larmes rouges,
+        un corps allongé aux membres fins, et des yeux d'un noir absolu qui semblent vous suivre
+        où que vous regardiez.
+      </p>
+    </div>
   </section>
 
-  <!-- HISTOIRE -->
+
+
+  <!-- Section : Histoire et origines -->
   <section id="histoire">
-    <h2>Histoire complète</h2>
-    <p>Le contenu de l'histoire ira ici.</p>
+    <div class="section-wrapper reveal reveal-delay-1">
+      <span class="badge-jeu">Origines</span>
+      <h2>Histoire complète</h2>
+      <div class="h2-ligne" aria-hidden="true"></div>
+      <p>
+        Derrière l'animatronique se cache l'âme d'une petite fille assassinée par William Afton
+        devant la pizzeria Freddy Fazbear's. Cette enfant, laissée seule dehors sous la pluie,
+        avait reçu le boîte à musique du Puppet comme présent — un lien indéfectible qui persiste
+        même après sa mort.
+      </p>
+      <p>
+        Son esprit habite désormais le Puppet, animé par la seule mission de protéger les enfants
+        que William Afton continuera de cibler. C'est elle qui insuffle une vie nouvelle aux
+        animatroniques possédés en plaçant l'âme des victimes dans leurs costumes.
+      </p>
+    </div>
   </section>
 
-  <!-- FNAF 2 -->
+
+
+
+  <!-- Section : Rôle dans FNAF 2 -->
   <section id="fnaf2">
-    <h2>Son rôle dans FNAF 2</h2>
-    <p>Le contenu FNAF 2 ira ici.</p>
+    <div class="section-wrapper reveal">
+      <span class="badge-jeu">FNAF 2 — 1987</span>
+      <h2>Son rôle dans FNAF 2</h2>
+      <div class="h2-ligne" aria-hidden="true"></div>
+      <p>
+        Dans Five Nights at Freddy's 2, le Puppet est enfermé dans une boîte à musique au fond
+        du Puppet's Box. Votre unique moyen de le contrôler : remonter la boîte à musique via
+        la tablette de surveillance. Si la mélodie s'arrête, il sort — et aucune caméra ni porte
+        ne peut vous sauver.
+      </p>
+      <p>
+        Il représente une menace unique car il est <em>immunisé</em> contre le masque Freddy, seule
+        défense disponible contre les autres animatroniques. Sa présence force le joueur à gérer
+        deux systèmes de survie en parallèle, sous pression constante.
+      </p>
+    </div>
   </section>
 
-  <!-- FNAF 3 -->
+
+
+  <!-- Section : Apparition dans FNAF 3 -->
   <section id="fnaf3">
-    <h2>FNAF 3 — Le Phantom Puppet</h2>
-    <p>Le contenu FNAF 3 ira ici.</p>
+    <div class="section-wrapper reveal">
+      <span class="badge-jeu">FNAF 3</span>
+      <h2>Le Phantom Puppet</h2>
+      <div class="h2-ligne" aria-hidden="true"></div>
+      <p>
+        Dans Five Nights at Freddy's 3, le Puppet n'apparaît plus sous sa forme physique, mais
+        en tant que <em>Phantom</em> — une hallucination issue d'un esprit qui n'a pas encore
+        trouvé le repos. Il surgit lorsque le joueur fixe trop longtemps une affiche particulière
+        sur les caméras.
+      </p>
+      <p>
+        Son apparition dans FNAF 3 renforce l'idée que son âme est liée aux lieux et aux événements
+        de la franchise, incapable de disparaître tant que la vérité n'est pas révélée.
+      </p>
+    </div>
   </section>
 
-  <!-- FNAF 6 -->
+
+
+
+  <!-- Section : FNAF 6 / Pizzeria Simulator -->
   <section id="fnaf6">
-    <h2>FNAF 6 — La libération finale</h2>
-    <p>Le contenu FNAF 6 ira ici.</p>
+    <div class="section-wrapper reveal">
+      <span class="badge-jeu">FNAF 6 — Pizzeria Simulator</span>
+      <h2>La libération finale</h2>
+      <div class="h2-ligne" aria-hidden="true"></div>
+      <p>
+        Freddy Fazbear's Pizzeria Simulator marque le dénouement de l'arc narratif du Puppet.
+        Sous son identité humaine de <em>Charlotte Emily</em>, elle comprend enfin que sa mission
+        est accomplie. Les enfants sont en sécurité, et William Afton est neutralisé.
+      </p>
+      <p>
+        Dans la cinématique finale, son thème musical joue tandis que les âmes piégées sont
+        libérées. C'est l'un des moments les plus émouvants de toute la saga — la fin d'un
+        sacrifice qui aura duré des décennies.
+      </p>
+    </div>
   </section>
 
-  <!-- CONCLUSION -->
+
+
+
+  <!-- Section : Conclusion -->
   <section id="conclusion">
-    <h2>Conclusion</h2>
-    <p>Le contenu de la conclusion ira ici.</p>
+    <div class="section-wrapper reveal">
+      <span class="badge-jeu">Bilan</span>
+      <h2>Conclusion</h2>
+      <div class="h2-ligne" aria-hidden="true"></div>
+      <p>
+        Le Puppet est bien plus qu'un simple antagoniste. C'est le fil conducteur émotionnel
+        de la trilogie originale de FNAF — une âme blessée qui transforme sa propre tragédie
+        en acte de protection pour les autres.
+      </p>
+      <p>
+        Sa conception visuelle, ses mécaniques de jeu uniques et sa profondeur narrative en font
+        l'un des personnages les plus marquants de l'histoire des jeux d'horreur indépendants.
+      </p>
+    </div>
   </section>
 
-  <footer>Five Nights at Freddy's — Scott Cawthon</footer>
+=
+
+
+
+
+<!-- 
+       PIED DE PAGE
+  -->
+<footer>
+    <span class="footer-symbol">∞</span>
+    <p> Five Nights at Freddy's  — Site consacré à Puppet</p>
+    <a href="https://salutoi3008.github.io/Trombinoscope-Anime-Manga/">Retour au Trombinoscope</a>
+  </footer>
+  <script src="script.js"></script>
 
 </body>
 </html>
