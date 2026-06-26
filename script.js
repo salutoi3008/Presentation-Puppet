@@ -117,3 +117,20 @@ const observerReveal = new IntersectionObserver((entries) => {
 reveals.forEach((el) => {
   observerReveal.observe(el);
 });
+
+/* Zoom sur l'image  Puppet&Emily + affichage de la légende*/ 
+
+const overlay    = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+document.querySelectorAll('.zoomable').forEach(img => {
+  img.addEventListener('click', () => {
+    overlayImg.src = img.src;
+    overlay.classList.add('show');
+  });
+});
+
+overlay.addEventListener('click', () => overlay.classList.remove('show'));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') overlay.classList.remove('show');
+});
