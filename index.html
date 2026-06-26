@@ -19,12 +19,15 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════════
-       NAVIGATION FIXE
-       Reste en haut de page pendant le scroll.
-       La classe .scrolled est ajoutée via JS pour
-       afficher une ombre quand on défile.
-  ═══════════════════════════════════════════════ -->
+
+
+  <!-- =======================================
+               NAVIGATION FIXE
+        Reste en haut de page pendant le scroll.
+        La classe .scrolled est ajoutée via JS pour
+        afficher une ombre quand on défile.
+       ========================================-->
+
   <nav id="nav-principal">
     <ul>
       <li><a href="#intro">Intro</a></li>
@@ -36,29 +39,24 @@
     </ul>
   </nav>
 
-
-  <!-- ═══════════════════════════════════════════════
+  <!-- =================================================
        HERO — Section d'accroche pleine hauteur
        Contient :
-         • L'image de Puppet
-         • Le titre animé
-         • Le séparateur rouge
-         • Les larmes animées (motif visuel signature)
-         • La flèche de scroll
-  ═══════════════════════════════════════════════ -->
+         - L'image de Puppet
+         - Le titre animé
+         - Le séparateur rouge
+         - Les larmes animées (motif visuel signature)
+         - La flèche de scroll
+       ================================================== -->
+
   <section id="hero">
     <div class="hero-contenu">
 
-      <!-- Image de Puppet — place ton fichier image dans le même dossier
-           que index.html et remplace "puppet.png" par son nom exact. -->
+    
       <div class="puppet-img-wrapper">
-
-        <!-- Halo lumineux derrière le personnage -->
-        <div class="halo" aria-hidden="true"></div>
-
+        <div class="halo" aria-hidden="true"></div> <!-- Halo lumineux derrière le personnage -->
         <img src="img/Puppet.png" alt="Illustration de Puppet">
-
-      </div><!-- /.puppet-img-wrapper -->
+      </div><
 
       <!-- Titre principal avec animation d'entrée CSS -->
       <h1>Puppet</h1>
@@ -88,14 +86,17 @@
   </section><!-- /#hero -->
 
 
-  <!-- ═══════════════════════════════════════════════
-       SECTIONS DE CONTENU
-       Chaque section utilise .reveal pour l'animation
-       d'apparition au scroll (gérée par le JS avec
-       IntersectionObserver).
-       .reveal-delay-N permet de décaler les animations
-       entre blocs voisins.
-  ═══════════════════════════════════════════════ -->
+
+
+  <!-- =====================================================
+                SECTIONS DE CONTENU
+          Chaque section utilise .reveal pour l'animation
+          d'apparition au scroll (gérée par le JS avec
+          IntersectionObserver).
+         .reveal-delay-N permet de décaler les animations
+         entre blocs voisins.
+  ========================================================  -->
+
 
   <!-- Section : Introduction générale -->
   <section id="intro">
@@ -104,10 +105,9 @@
       <h2>Introduction</h2>
       <div class="h2-ligne" aria-hidden="true"></div>
       <p>
-        Le Puppet (également appelé <em>The Marionette</em>) est l'un des animatroniques les plus
-        mystérieux et emblématiques de la franchise Five Nights at Freddy's. Contrairement aux
-        autres créatures de la pizzeria, il ne se contente pas d'errer dans les couloirs — il
-        observe, il ressent, et il agit avec intention.
+       Puppet est l'un des animatroniques les plus connus et l'un des plus importants de toute la license 
+       Five nights at Freddy's. Découverte la première fois dans FNAF 2, son histoire nous est dévoilée 
+       au fur et à mesure que les jeux avancent.  
       </p>
       <p>
         Son apparence est immédiatement reconnaissable : un visage blanc maquillé de larmes rouges,
@@ -117,6 +117,9 @@
     </div>
   </section>
 
+
+
+
   <!-- Section : Histoire et origines -->
   <section id="histoire">
     <div class="section-wrapper reveal reveal-delay-1">
@@ -124,18 +127,31 @@
       <h2>Histoire complète</h2>
       <div class="h2-ligne" aria-hidden="true"></div>
       <p>
-        Derrière l'animatronique se cache l'âme d'une petite fille assassinée par William Afton
-        devant la pizzeria Freddy Fazbear's. Cette enfant, laissée seule dehors sous la pluie,
-        avait reçu le boîte à musique du Puppet comme présent — un lien indéfectible qui persiste
-        même après sa mort.
+        Derrière l'animatronique se cache l'âme d'une petite fille : Charlotte Emily. Assassinée par William Afton
+        devant la pizzeria Freddy Fazbear's, cette enfant, laissée seule dehors sous la pluie,
+        avait reçu par son père Henry Emily le plus beau des cadeau : Un animatroniques qui serait toujours là pour la protéger.
+      </p>
+
+
+      <p>
+        Cet animatronique se nomme Puppet et lorsqu'il a remarqué qu'Emily était dehors, il sortit pour la retrouver. Sous une pluie battante,
+        il usa de toute ses dernières forces pour réussir sa seule et unique mission : Protéger Emily.
+        Il protégea le corps sans vie de la petite fille en échange du siens.
       </p>
       <p>
-        Son esprit habite désormais le Puppet, animé par la seule mission de protéger les enfants
+        Son esprit habite désormais Puppet, animé par la seule mission de protéger les enfants
         que William Afton continuera de cibler. C'est elle qui insuffle une vie nouvelle aux
         animatroniques possédés en plaçant l'âme des victimes dans leurs costumes.
       </p>
+
+      <img src="img/Puppet_Charlie.jpg" alt="Puppet et Charlie Emily" class="histoire-img">
+
+
     </div>
   </section>
+
+
+
 
   <!-- Section : Rôle dans FNAF 2 -->
   <section id="fnaf2">
@@ -157,6 +173,9 @@
     </div>
   </section>
 
+
+
+
   <!-- Section : Apparition dans FNAF 3 -->
   <section id="fnaf3">
     <div class="section-wrapper reveal">
@@ -175,6 +194,9 @@
       </p>
     </div>
   </section>
+
+
+
 
   <!-- Section : FNAF 6 / Pizzeria Simulator -->
   <section id="fnaf6">
@@ -214,9 +236,9 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════
-       PIED DE PAGE
-  ═══════════════════════════════════════════════ -->
+  <!-- ===============
+        PIED DE PAGE
+       =============== -->
   <footer>
     <p>Five Nights at Freddy's — Scott Cawthon</p>
   </footer>

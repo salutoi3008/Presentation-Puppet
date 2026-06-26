@@ -360,6 +360,16 @@ nav a.active::after {
 }
 
 
+/*  image charlie&Puppet*/
+.histoire-img {
+  display: block;
+  max-width: 420px;
+  width: 100%;
+  margin: 2rem auto;
+  border-radius: 8px;
+}
+
+
 /* ──────────────────────────────────────────────────────────
    9. ANIMATIONS D'APPARITION AU SCROLL
    Les éléments .reveal sont invisibles par défaut.
